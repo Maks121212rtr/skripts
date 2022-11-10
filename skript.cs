@@ -17,7 +17,7 @@ public class skript : MonoBehaviour
    
     void Update()
     {
-        clicktext.text = skript.ToString();
+        clicktext.text = score.ToString();
     }
 
     public void ClickerScore()
