@@ -28,6 +28,6 @@ public class skript : MonoBehaviour
 
     public void Reset()
     {
-        PlayerPrefs.deleteAll();
+        PlayerPrefs.DeleteAll();
     }
 }
