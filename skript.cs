@@ -5,27 +5,29 @@ using UnityEngine.UI;
 
 public class skript : MonoBehaviour
 {
-    public int score; 
+    public int skript; 
     public Text clicktext;
 
     void Start()
     {
-        score = 0;
-        score = playerPrefs.GetInt("score", score);
+        skript = 0;
+        skript = playerPrefs.GetInt("skript", skript);
     }
 
    
     void Update()
     {
-        clicktext.text = score.ToString();
+        clicktext.text = skript.ToString();
     }
-    public void ClickerScore()
+    public void Clickerskript()
     {
-        score++;
-        playerPrefs.SetInt("score+", score);
+        skript++;
+        playerPrefs.SetInt("skript+", skript);
     }
     public void Reset()
     {
         playerPrefs.deleteAll();
     }
+    /// efsf
 }
+
