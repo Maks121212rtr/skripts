@@ -11,7 +11,7 @@ public class skript : MonoBehaviour
     void Start()
     {
         score = 0;
-        score = PlayerPrefs.GetInt("score", score);
+        score = PlayerPrefs.GetInt("Score+", score);
     }
 
    
@@ -23,7 +23,7 @@ public class skript : MonoBehaviour
     public void ClickerScore()
     {
         score++;
-        PlayerPrefs.SetInt("score+", score);
+        PlayerPrefs.SetInt("Score+", score);
     }
 
     public void Reset()
