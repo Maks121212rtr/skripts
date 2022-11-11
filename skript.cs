@@ -2,33 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 
 public class skript : MonoBehaviour
 {
-    public int score; 
-    public Text clicktext;
+    [SerializeField] int money; 
+    public int total_money;
+    public Text moneyText;
 
     void Start()
     {
-        score = 0;
-        score = PlayerPrefs.GetInt("Score+", score);
+        money = PlayerPrefs.GetInt("money", money);
+        total_money = PlayerPrefs.GetInt("total_money", total_money);
     }
 
    
     void Update()
     {
-        clicktext.text = score.ToString();
+        moneyText.text = money.ToString();
     }
 
-    public void ClickerScore()
+    public void Clickermoney()
     {
-        score++;
-        PlayerPrefs.SetInt("Score+", score);
+        money++;
+        total_money++;
+        PlayerPrefs.SetInt("money", money);
+        PlayerPrefs.SetInt("total_money", total_money);
     }
 
-    public void Reset()
+    public void ToDos()
     {
-        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene(0);
     }
+
 }
