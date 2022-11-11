@@ -32,7 +32,12 @@ public class skript : MonoBehaviour
 
     public void ToDos()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
+    }
+
+    public void Reset()
+    {
+        PlayerPrefs.DeleteAll();
     }
 
 }
