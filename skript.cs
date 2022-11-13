@@ -70,10 +70,10 @@ public class skript : MonoBehaviour
     {
         if(money >= CostPrice[0]) // проверяем хватает ли у нас денег для выполнения
         {
-            money -= CostPrice[0]; // отнимает цену
-            CostPrice[0] *= 2; // увеличевает цену на товар
+            money -= CostPrice[0]; // отнимает цену (индекс это номер в юнити)
+            CostPrice[0] *= 2; // увеличевает цену на товар (индекс это номер в юнити)
             clickMoney *= 2; // увеличивает количество денег за 1 клик
-            CostText[0].text = CostPrice[0] + "₽"; // после увеличения цены в логике выводим на текст
+            CostText[0].text = CostPrice[0] + "₽"; // после увеличения цены в логике выводим на текст (индекс это номер в юнити)
         }
     }
 
@@ -90,7 +90,7 @@ public class skript : MonoBehaviour
 
     IEnumerator BonusShop() // добавляем хуйню (не помню что это)
     {
-        while (true) // бесконечное выполнения цикла
+        while (true) // выполнения петли цикла
         {
             money += CostBonus[0]; // добавляем к деньгам переменную бонуса
             yield return new WaitForSeconds(1); // выполняем действие выше через секунду
@@ -101,15 +101,15 @@ public class skript : MonoBehaviour
     {
         sv.money = money; // сохранение кол-ва денег
         sv.clickMoney = clickMoney; // сохранение и тд
-        sv.CostBonus = new int[1];
-        sv.CostPrice = new int[2];
+        sv.CostBonus = new int[1]; // в индексе кол-во кост бонусов
+        sv.CostPrice = new int[2]; // в индесе кол-во цен
 
-        for(int i = 0; i < 1; i++) // тк у нас есть индекс мы должны сохранить его
+        for(int i = 0; i < 1; i++) // тк у нас есть индекс мы должны сохранить его (если изменилось количество то нужно пеменять его)
         {
             sv.CostBonus[i] = CostBonus[i]; // сохранение индекса
         }
 
-        for(int i = 0; i < 2; i++) // тк у нас есть индекс мы должны сохранить его
+        for(int i = 0; i < 2; i++) // тк у нас есть индекс мы должны сохранить его (если изменилось количество то нужно пеменять его)
         {
             sv.CostPrice[i] = CostPrice[i]; // сохранение индекса
         }
